@@ -1,4 +1,3 @@
-#include <string.h>
 #include <stdlib.h>
 #include "lists.h"
 
@@ -9,12 +8,12 @@
  */
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *node;
+    dlistint_t *node_to_free;
 
-	while (head)
-	{
-		node = head;
-		head = head->next;
-		free(node);
-	}
+    while (head != NULL)
+    {
+        node_to_free = head;
+        head = head->next;
+        free(node_to_free);
+    }
 }
