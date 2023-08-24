@@ -8,25 +8,26 @@
  * @head: The address of the pointer to the first element of the list
  * @n: The number to store in the new element
  *
- * Return: A pointer to the new element, or NULL on failure
+ * Return: A pointer to the new element
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-    dlistint_t *new_node, *last_node;
+    dlistint_t *new_node;
+    dlistint_t *last_node;
 
     new_node = malloc(sizeof(dlistint_t));
     if (new_node == NULL)
     {
-        return (NULL); // Unable to allocate memory for the new node
+        return (NULL);
     }
 
     new_node->n = n;
     new_node->next = NULL;
 
-    if (*head == NULL) // List is empty
+    if (*head == NULL)
     {
-        new_node->prev = NULL;
         *head = new_node;
+        new_node->prev = NULL;
         return (new_node);
     }
 
@@ -38,5 +39,6 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
     last_node->next = new_node;
     new_node->prev = last_node;
+
     return (new_node);
 }

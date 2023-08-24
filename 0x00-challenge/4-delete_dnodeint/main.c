@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * main - Test program for doubly linked list functions.
+ * main - check the code for Holberton School students.
  *
  * Return: Always EXIT_SUCCESS.
  */
@@ -11,26 +11,15 @@ int main(void)
 {
     dlistint_t *head = NULL;
 
-    for (int i = 0; i <= 8; i++)
-    {
-        add_dnodeint_end(&head, i * 100);
+    for (int i = 0; i <= 8; i++) {
+        add_dnodeint_end(&head, i * 2);
     }
 
-    printf("Original list:\n");
     print_dlistint(head);
-
-    printf("-----------------\n");
-    
-    delete_dnodeint_at_index(&head, 5);
-    printf("List after deleting at index 5:\n");
-    print_dlistint(head);
-
     printf("-----------------\n");
 
-    for (int i = 0; i < 5; i++)
-    {
+    for (int i = 0; i < 9; i++) {
         delete_dnodeint_at_index(&head, 0);
-        printf("List after deleting at index 0:\n");
         print_dlistint(head);
         printf("-----------------\n");
     }
