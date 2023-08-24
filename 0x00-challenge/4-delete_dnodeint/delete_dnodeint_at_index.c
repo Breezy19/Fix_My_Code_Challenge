@@ -23,7 +23,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
     saved_head = *head;
     p = 0;
     
-    // Traverse to the node at the given index
+    /* Traverse to the node at the given index */
     while (p < index && *head != NULL)
     {
         *head = (*head)->next;
